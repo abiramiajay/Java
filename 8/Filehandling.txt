@@ -1,0 +1,32 @@
+import java.io.*;
+class Filehandling
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			File f1=new File("d:\\FH\\server\\doc1.txt");
+			File f2=new File("d:\\FH\\server\\doc2.txt");
+			FileReader fr1= new FileReader(f1);
+			FileReader fr2= new FileReader(f2);
+			int l1=(int)f1.length();
+			int l2=(int)f2.length();
+			System.out.println(l1);
+			System.out.println(l2);
+			char[] array1=new char[l1];
+			char[] array2=new char[l2];
+			fr1.read(array1);
+			fr2.read(array2);
+			System.out.println("read successfully");
+			FileWriter fw=new FileWriter("d:\\FH\\client\\doc3.txt");
+			fw.write(array1);
+			fw.write(array2);
+			fw.close();
+			System.out.println("written successfully");
+            }
+catch(Exception e)
+{
+	System.out.println("invalid location");
+    }
+     }
+      }
