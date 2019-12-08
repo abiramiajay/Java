@@ -1,0 +1,44 @@
+import java.io.*;
+class Vowels_in_file
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			File f=new File("d:\\FH\\client\\doc3.txt");
+			FileReader fr= new FileReader(f);
+			int l=(int)f.length();
+			System.out.println(l);
+			char[] array=new char[l];
+			fr.read(array);
+			System.out.println("read successfully");
+            int c1=0,c2=0,c3=0,c4=0,c5=0;
+			for(int i=0;i<array.length;i++)
+			{
+			if(array[i]=='a')
+			{ c1++;}
+
+			if(array[i]=='e')
+			{ c2++;}
+
+			if(array[i]=='i')
+			{ c3++;}
+
+			if(array[i]=='o')
+			{ c4++;}
+
+			if(array[i]=='u')
+			{ c5++;}
+			}
+            System.out.println("count a="+c1);
+            System.out.println("count e="+c2);
+            System.out.println("count i="+c3);
+            System.out.println("count o="+c4);
+            System.out.println("count u="+c5);
+		}
+catch(Exception e)
+{
+	System.out.println("invalid location");
+    }
+     }
+      }
