@@ -1,0 +1,21 @@
+import java.io.*;
+import java.net.*;
+class Server
+{
+	public static void main(String []args)
+{
+	try{
+	ServerSocket serversocket=new ServerSocket(1994);
+		Socket socket1=serversocket.accept();
+		System.out.println("ack sent");
+		DataInputStream dis=new DataInputStream(socket1.getInputStream());
+		String originalmsg =dis.readUTF();
+		System.out.println("client message:"+originalmsg);
+     }
+
+ catch(Exception e)
+ {
+	System.out.println(e);
+	 }
+ }
+}
