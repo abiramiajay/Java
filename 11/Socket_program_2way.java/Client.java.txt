@@ -1,0 +1,20 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+class Client_2
+{
+	public static void main(String []args)throws Exception
+	{
+		Socket socket=new Socket("localhost",1234);
+		DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
+		Scanner sc=new Scanner(System.in);
+		String message=sc.nextLine();
+		dos.writeUTF(message);
+		dos.close();
+		ServerSocket serversocket=new ServerSocket(12345);
+		socket=serversocket.accept();
+		DataInputStream dis=new DataInputStream(socket.getInputStream());
+		String text1=dis.readUTF();
+		System.out.println("Server Message:"+text1);
+		}
+	}
